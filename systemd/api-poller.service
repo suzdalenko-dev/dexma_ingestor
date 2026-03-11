@@ -6,9 +6,9 @@ Wants=network-online.target
 [Service]
 Type=simple
 User=usuario
-WorkingDirectory=/opt/api_poller
+WorkingDirectory=/home/usuario/developer/dexma_ingestor
 Environment="PYTHONUNBUFFERED=1"
-ExecStart=/opt/api_poller/.venv/bin/python /opt/api_poller/app/main.py
+ExecStart=/home/usuario/developer/dexma_ingestor/.venv/bin/python /home/usuario/developer/dexma_ingestor/app/main.py
 Restart=always
 RestartSec=5
 TimeoutStartSec=30
