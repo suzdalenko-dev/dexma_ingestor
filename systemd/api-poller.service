@@ -1,0 +1,18 @@
+[Unit]
+Description=Simple API Poller
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=usuario
+WorkingDirectory=/opt/api_poller
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/opt/api_poller/.venv/bin/python /opt/api_poller/app/main.py
+Restart=always
+RestartSec=5
+TimeoutStartSec=30
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
